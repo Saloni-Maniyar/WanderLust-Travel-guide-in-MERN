@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing</title>
+</head>
+<body>
+    <!-- used multer: Multer is a middleware used in Node.js with Express to handle multipart/form-data, which is primarily used for uploading files.
+
+It helps extract files from the incoming HTTP request and stores them in memory or on disk. In web applications, we typically use it to let users upload images, PDFs, or other media through forms. -->
+    <form method="post" action="/listings/new_list" enctype="multipart/form-data">
+        <label for="title">Enter title for Image:</label>
+        <input type="text" id="title" name="title" required><br> <br>
+        <label for="image">Add image from machine</label>
+        <input type="file" accept="image/*" id="image" name="imageFile"><br> <br>
+        <label for="imageLink">or enter image url for online image</label>
+        <input type="text" id="imageLink" name="imageLink"><br> <br>
+        <label for="description">Enter image description</label>
+        <textarea id="description" placeholder="Write description here..." name="description">
+
+        </textarea><br> <br>
+        <label for="price">Enter image price</label>
+        <input type="text" id="price" name="price"><br> <br>
+        <label for="location">Enter Location</label>
+        <input type="text" id="location" name="location"><br> <br>
+        <label for="country">Enter country name</label>
+        <input type="text" id="country" name="country"><br> <br>
+        <button type="submit">create listing</button><br> <br>
+    </form>
+</body>
+</html>

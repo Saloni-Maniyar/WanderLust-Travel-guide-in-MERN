@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Listing</title>
+</head>
+<body>
+    <form method="post" action="/listings/<%=listing._id%>/edit?_method=PUT" enctype="multipart/form-data">
+        <label for="title">Enter title for Image:</label>
+        <input type="text" id="title" name="title" value="<%=listing.title%>" required><br> <br>
+        <label for="currentImage">Current Image:(you can change the  image by changing the url or by choosing file from machine)</label>
+        <img src="<%=listing.image.url%>" alt="current image" id="currentImage">
+        <br><br>
+        <label for="image">Add image from machine</label>
+        <input type="file" accept="image/*" id="image" name="imageFile"><br> <br>
+        <label for="imageLink">or enter image url for online image</label>
+        <input type="text" id="imageLink" name="imageLink" value="<%=listing.image.url%>"><br> <br>
+        <label for="description">Enter image description</label>
+        <textarea id="description" placeholder="Write description here..." name="description" value="<%=listing.description%>">
+
+        </textarea><br> <br>
+        <label for="price">Enter image price</label>
+        <input type="text" id="price" name="price" value="<%=listing.price%>"><br> <br>
+        <label for="location">Enter Location</label>
+        <input type="text" id="location" name="location" value="<%=listing.location%>"><br> <br>
+        <label for="country">Enter country name</label>
+        <input type="text" id="country" name="country" value="<%=listing.country%>"><br> <br>
+        <button type="submit">create listing</button><br> <br>
+    </form>
+</body>
+</html>
